@@ -1,14 +1,5 @@
 import * as React from 'react'
-import {
-  Text,
-  Box,
-  Center,
-  VStack,
-  themeTools,
-  useTheme,
-  useColorMode,
-  useColorModeValue
-} from 'native-base'
+import { Text, Box, Center, VStack } from 'native-base'
 import { ThemeToggle } from '../../components/atoms/theme-toggle'
 
 export default function MainScreen() {
