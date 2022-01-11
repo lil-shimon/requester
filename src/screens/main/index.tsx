@@ -9,7 +9,7 @@ import {
   useColorMode,
   useColorModeValue
 } from 'native-base'
-import { ThemeToggle } from '../theme-toggle'
+import { ThemeToggle } from '../../components/atoms/theme-toggle'
 
 export default function MainScreen() {
   return (
