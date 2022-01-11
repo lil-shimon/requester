@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, Box, Center, VStack } from 'native-base'
+import { Text, Box, Center, VStack, useColorModeValue } from 'native-base'
 import { ThemeToggle } from '../../components/atoms/theme-toggle'
 
 export default function MainScreen() {
@@ -11,7 +11,11 @@ export default function MainScreen() {
       flex={1}
     >
       <VStack space={5} alignItems="center">
-        <Box>
+        <Box
+          p={10}
+          bg={useColorModeValue('red.500', 'yellow.500')}
+          borderRadius={25}
+        >
           <Text>Hello</Text>
         </Box>
         <ThemeToggle />
