@@ -1,8 +1,16 @@
-import * as React from 'react'
-import { Text, Box, Center, VStack, useColorModeValue } from 'native-base'
+import React, {useCallback, useState} from 'react'
+import { Text, Box, Center, VStack, useColorModeValue, Pressable } from 'native-base'
 import { ThemeToggle } from '../../components/atoms/theme-toggle'
+import { AnimatedCheckbox } from '../../components/atoms/animated'
 
 export default function MainScreen() {
+
+  const [ checked, setChecked ] = useState<boolean>(false)
+
+  const handlePressCheck = useCallback(() => {
+    setChecked(prev => !prev)
+    }, [])
+
   return (
     <Center
       _dark={{ bg: 'blueGray.900' }}
@@ -16,6 +24,9 @@ export default function MainScreen() {
           bg={useColorModeValue('red.500', 'yellow.500')}
           borderRadius={25}
         >
+        <Pressable onPress={handlePressCheck}>
+          <AnimatedCheckbox checked={checked}/>
+        </Pressable>
           <Text>Hello</Text>
         </Box>
         <ThemeToggle />
